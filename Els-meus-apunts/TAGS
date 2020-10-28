@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TAGS</title>
+    <!--<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>-->
+</head>
+<body>
+    <h1>Apunts de <strong id="strong-h1" class="strong">HTML 5</strong></h1>
+
+    <h2>SEGONA CAPÇALERA</h2>
+    <h3>TERCERA CAPÇALERA</h3>
+    <h4>CUARTA CAPÇALERA</h4>
+    <h5>CINQUENA CAPÇALERA</h5>
+    <h6>SISENA..............</h6>
+
+    <p>Això es un paràgraf, està escrit amb un tag &lt;p&gt;</p>
+
+    <p>En el segon paràgraf hi ha un <span id="span-p1" class="span">span</span> amagat, aquest tag serveix per fer referència a una part del text</p>
+    <button onclick='{document.querySelector("#span-p1").style.color = "red"}'>HOLA</button>
+
+    <p>El tag &lt;<strong id="strong-p" class="strong">strong</strong>&gt; serveix per destracar text dins un paràgraf</p>
+
+    <p>El tag &lt;a&gt; serveix per insertar links a la pàgina, cap una altre propia o a una externa de internet, per exemple: <a href="https://es.wikipedia.org/wiki/HTML">Wikipèdia</a></p>
+
+    <p>Amb &lt;img&gt; pots insetar imatges, té dos atributs obligatòris el src es refereix al enllaç on es la imatge, i alt el cual serveix per descriure l'imatge en cas de que no es pugui renderitzar</p>
+    <img src="https://img.icons8.com/material/4ac144/64/user-male.png" alt="Un icone">
+
+    <p>Les taules es representen amb el tag &lt;table&gt;, la cual es divideix en &lt;tr&gt;, &lt;th&gt; i &lt;td&gt;, aquí hi ha una taula del operador</p>
+    <table id="taula">
+        <caption>AND</caption>
+        <tr>
+          <td></td>
+          <th id="cel0">0</th>
+          <th id="cel1">1</th>
+        </tr>
+        <tr>
+          <th id="cel2">0</th>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th id="cel3">1</th>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+      <ul>
+          <li>Les llistes es fan amb els tags</li>
+          <li>&lt;ul&gt;</li>
+              <ul>
+                  <li>per</li>
+                  <li>llistes</li>
+                  <li>desordenades</li>
+              </ul>
+          <li>&lt;ol&gt;</li>
+          <ol>
+              <li>per</li>
+              <li>llistes</li>
+              <li>ordenades</li>
+          </ol>
+      </ul>
+
+      <code>ola klk</code>
+      <address>ola klk</address>
+      <pre>ola klk</pre>
+      <blockquote>ola klk</blockquote>
+</body>
+</html>
+<!--
+
+    BLOCKQUOTE, ADDRESS, P, SPAN, STRONG, PRE, CODE
+    
+p: paragraf
+h1-h6: capçalera
+span: contingut especial(dins p)
+strong: contingut destacat(dins p)
+doctype html: version html
+html: contingut pagina
+head: estils metadades
+body: contingut de la pagina
+a: Enllaços (. = pagina inicial)(.. = pagina pare)(/ = pagina fill)
+img: imatges
+table: taules
+td, th, tr: parts de la taula
+ul, ol: llistes (desordenades i ordenades)
+li: element de la llista (les llistes poden estar dins una llista)
+FORMULARIS
+form: GET (envia paràmetres al URL)
+      POST (envia els parametres al body)
+input: les diferents entrades del formularis
+label: etiquetes dins un formularis
+textarea: part del formulari per escriure
+select: llistes
+option: cada part de la llista
+-->
