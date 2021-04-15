@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#title{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20%;
+}
+#nocturn_mode{
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+#nocturn_slider{
+    position:relative;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+    border-radius: 40%;
+    height: 20px;
+    width: 30px;
+}
+#nocturn_button{
+    transform: translateY(-30%) translateX(75%);
+    border-radius: 50%;
+    background-image: url('https://i.pinimg.com/originals/cf/4d/db/cf4ddb205c2ffe11add407e8fe1dd67a.png');
+    height: 30px;
+    width: 30px;
+}

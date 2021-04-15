@@ -1,0 +1,14 @@
+#header{
+    background-color: blue;
+}
+
+#nocturn_slider{
+    background-color: black;
+    border: 3px white solid;
+}
+
+#nocturn_button{
+    transform: translateY(-30%) translateX(0%);
+    background-color: black;
+    border: 3px white solid;
+}
