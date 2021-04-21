@@ -1,7 +1,12 @@
-#header{
-    background-color: blue;
+*{
+    color: white;
 }
-
+#header{
+    background-color: rgb(20, 20, 97);
+}
+#header h1{
+    color: white;
+}
 #nocturn_slider{
     background-color: black;
     border: 3px white solid;
@@ -11,4 +16,13 @@
     transform: translateY(-30%) translateX(0%);
     background-color: black;
     border: 3px white solid;
+}
+#menu>a:hover{
+    color: rgb(252, 252, 67);
+}
+.menu_unselected{
+    color: white;
+}
+.menu_selected{
+    color: yellow;
 }
