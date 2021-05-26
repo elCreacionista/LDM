@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 #title{
     display: flex;
     justify-content: space-between;
@@ -28,4 +34,15 @@
     background-image: url('https://i.pinimg.com/originals/cf/4d/db/cf4ddb205c2ffe11add407e8fe1dd67a.png');
     height: 30px;
     width: 30px;
+}
+h1{
+    z-index: 2;
+}
+nav{
+    z-index: 3;
+}
+.cloud{
+    z-index: 1;
+    height: 100px;
+    width: 200px;
 }

@@ -3,7 +3,7 @@ function CreateTree(DOMElement, position, id){
     let svg = document.createElementNS(W3, 'svg');
     
     let rand = (Math.random()*1000);
-    const x = position  ? rand : -100;
+    const x = position  ? rand : -150;
     
     svg.classList.add("cloud");
     svg.id = "cloud" + clouds.length;
@@ -35,7 +35,7 @@ function CreateTree(DOMElement, position, id){
 
     function Circle(obj){
         let circle = document.createElementNS(W3, 'circle');
-        console.log(circle)
+        //console.log(circle)
         circle.setAttributeNS(null, "cx", obj.px);
         circle.setAttributeNS(null, "cy", obj.py);
         circle.setAttributeNS(null, "r", obj.r);

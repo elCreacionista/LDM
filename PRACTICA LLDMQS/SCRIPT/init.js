@@ -12,7 +12,10 @@ clouds.push(CreateTree(document.querySelector("main"), true, 1));
 clouds.push(CreateTree(document.querySelector("main"), true, 2));
 clouds.push(CreateTree(document.querySelector("main"), true, 3));
 console.log(clouds);
-const moveClouds = setInterval(movesky, 1);
+const moveClouds = setInterval(movesky, 16);
+
+const pageW = document.querySelector('#header').offsetWidth;
+
 
 function movesky(){
     for(let i = 0; i < clouds.length; i++){
@@ -20,7 +23,7 @@ function movesky(){
             clouds.push(CreateTree(document.querySelector("main"), false, i));
             break;
         }*/
-        if (clouds[i].p > 1300){
+        if (clouds[i].p > pageW){
             document.querySelector("main").removeChild(clouds[i].c);
             clouds.splice(i ,1, CreateTree(document.querySelector("main"), false, i));
         }
