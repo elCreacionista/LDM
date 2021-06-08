@@ -1,5 +1,7 @@
+//CREO EL OBJETO CANVAS
 const canvas = document.querySelector("#main_canvas");
 const ctx = canvas.getContext('2d');
+//LOS DATOS DEL JUEGO POR SI TENGO QUE GUARDAR LA PUNTUACION LA COMBINACION CORRECTA ETC..
 class GameData{
     constructor(r,c){
         this.rows = r;
@@ -14,6 +16,8 @@ class GameData{
         this.centerx = (this.sizex/2) + 10;
         this.centery = (this.sizey/2) + 10;
     }
+    
+    //ESTAS DOS FUNCIONES SIMPLEMENTE CREAN COLORES ALEATORIOS
     createRandomBall(){
         let rand = Math.random();
         if (rand < .33)
@@ -31,25 +35,25 @@ class GameData{
         return arr;
     }
 }
+//LE DOY TAMAÑO AL CANVAS 
 canvas.style.height = "500px"
 canvas.style.width = "100%"
 canvas.height = 500;
 canvas.width = 1000;
-
+//CREO EL OBJETO DATOD DEL JUEGO
 const GD = new GameData(5,6);
 drawtable(GD);
 drawAllCircles(GD);
+
+
+//AQUI SIMPLEMENTE PINTO LOS CIRCULOS EN LAS COORDENADAS Y COLORES CORRESPONDIENTES
 function drawAllCircles(GD){
 
     for(let i = 0; i < GD.columns - 2; i++){
         for(let j = 0; j < GD.rows; j++){
             circle(GD.centery + (i * GD.sizey), GD.centerx + (j * GD.sizex), GD.actual[j][i]);
         }
-        
     }
-
-
-
 }
 
 //circle(90, 50);circle(250, 50)
@@ -62,6 +66,7 @@ function circle(x, y, color){
     ctx.stroke();
 }
 
+//ESTA FUNCION SIMPLEMENTE HACE LA TABLA
 function drawtable(GD){
     ctx.fillStyle = "black";
     let sizex = 400 / GD.rows
