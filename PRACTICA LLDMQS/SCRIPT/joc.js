@@ -17,7 +17,7 @@ class GameData{
         this.centery = (this.sizey/2) + 10;
     }
     
-    //ESTAS DOS FUNCIONES SIMPLEMENTE CREAN COLORES ALEATORIOS
+    //ESTAS DOS FUNCIONES CREAN COLORES ALEATORIOS
     createRandomBall(){
         let rand = Math.random();
         if (rand < .33)
@@ -46,7 +46,7 @@ drawtable(GD);
 drawAllCircles(GD);
 
 
-//AQUI SIMPLEMENTE PINTO LOS CIRCULOS EN LAS COORDENADAS Y COLORES CORRESPONDIENTES
+//AQUI PINTO LOS CIRCULOS EN LAS COORDENADAS Y COLORES CORRESPONDIENTES
 function drawAllCircles(GD){
 
     for(let i = 0; i < GD.columns - 2; i++){
@@ -66,7 +66,7 @@ function circle(x, y, color){
     ctx.stroke();
 }
 
-//ESTA FUNCION SIMPLEMENTE HACE LA TABLA
+//ESTA FUNCION DIBUJA LA TABLA
 function drawtable(GD){
     ctx.fillStyle = "black";
     let sizex = 400 / GD.rows
