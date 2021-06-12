@@ -7,6 +7,8 @@ class GameData{
         this.rows = r;
         this.columns = c;
         this.actual = [];
+        this.respuesta = [this.createRandomBall(), this.createRandomBall(), this.createRandomBall(), this.createRandomBall(),]
+        console.log(this.respuesta);
         for(let i = 0; i < r; i++){
             this.actual[i] = this.getAllColors(c - 2);
         }
@@ -17,7 +19,7 @@ class GameData{
         this.centery = (this.sizey/2) + 10;
     }
     
-    //ESTAS DOS FUNCIONES CREAN COLORES ALEATORIOS
+    //ESTAS DOS FUNCIONES SIMPLEMENTE CREAN COLORES ALEATORIOS
     createRandomBall(){
         let rand = Math.random();
         if (rand < .33)
@@ -26,7 +28,22 @@ class GameData{
             return "yellow";
         return "green";
     }
+    createGreen(){return "green"}
+    createRed(){return "red"}
+    createYellow(){return "yellow"}
     
+
+    changeColor(y, x){
+        let hx = x - 150;
+        let ix = hx / this.sizex;
+        let hy = y - 10;
+        let iy = hy / this.sizey;
+        console.log(ix | 0 , iy | 0);
+        this.actual[ix | 0][iy | 0] = this.createRandomBall();
+        drawAllCircles(this);
+
+    }
+
     getAllColors(n){
         let arr = [];
         for(let i = 0; i < n; i++){
@@ -46,7 +63,7 @@ drawtable(GD);
 drawAllCircles(GD);
 
 
-//AQUI PINTO LOS CIRCULOS EN LAS COORDENADAS Y COLORES CORRESPONDIENTES
+//AQUI SIMPLEMENTE PINTO LOS CIRCULOS EN LAS COORDENADAS Y COLORES CORRESPONDIENTES
 function drawAllCircles(GD){
 
     for(let i = 0; i < GD.columns - 2; i++){
@@ -55,6 +72,14 @@ function drawAllCircles(GD){
         }
     }
 }
+
+function printMousePos(event) {
+    console.log("clientX: " + event.clientX + " - clientY: " + event.clientY);
+    GD.changeColor(event.clientX, event.clientY)
+
+  }
+  
+  document.addEventListener("click", printMousePos);
 
 //circle(90, 50);circle(250, 50)
 
@@ -66,7 +91,7 @@ function circle(x, y, color){
     ctx.stroke();
 }
 
-//ESTA FUNCION DIBUJA LA TABLA
+//ESTA FUNCION SIMPLEMENTE HACE LA TABLA
 function drawtable(GD){
     ctx.fillStyle = "black";
     let sizex = 400 / GD.rows
