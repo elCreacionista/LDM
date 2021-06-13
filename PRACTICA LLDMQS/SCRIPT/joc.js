@@ -54,7 +54,7 @@ class GameData{
 }
 //LE DOY TAMAÑO AL CANVAS 
 canvas.style.height = "500px"
-canvas.style.width = "100%"
+canvas.style.width = "1000px"
 canvas.height = 500;
 canvas.width = 1000;
 //CREO EL OBJETO DATOD DEL JUEGO
@@ -75,6 +75,12 @@ function drawAllCircles(GD){
 
 function printMousePos(event) {
     console.log("clientX: " + event.clientX + " - clientY: " + event.clientY);
+    if (event.clientX > 600){
+
+        console.log("ola");
+        console.log((event.clientY / GD.sizey) | 0);
+	solutions((event.clientY / GD.sizey) | 0);
+    }else
     GD.changeColor(event.clientX, event.clientY)
 
   }
@@ -103,11 +109,24 @@ function drawtable(GD){
     }
 
     for(let i = 0; i < GD.columns + 1; i++){
+	if (i == GD.columns - 1) continue;
         let position = (i * sizey) + 10
         ctx.fillRect(position,10,2,400);
     }
     
 }
+function solutions( row){
+    let b = 0;
+    for(let i= 0; i < GD.columns;i++){
+	if (GD.actual[row][i] === GD.respuesta[i])
+	b++;
+    }
+    writeText(row, b);
+}
 
+function writeText(row, b){
+    ctx.fillStyle = "black";
+    ctx.fillText(b, GD.centerx + ((GD.columns - 1) * GD.sizex),GD.centery + (row * GD.sizey))
+}
 
 console.log(GD.actual);
